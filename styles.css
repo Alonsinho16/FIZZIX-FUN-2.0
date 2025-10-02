@@ -1,0 +1,348 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  height: 100vh;
+  color: #333;
+  line-height: 1.6;
+  overflow: hidden;
+}
+
+/* Contenedor principal */
+.container {
+  display: flex;
+  width: 100%;
+}
+
+/* Barra lateral */
+.sidebar {
+  width: 280px;
+  background: rgba(0, 31, 63, 0.95);
+  color: white;
+  padding: 25px 20px;
+  height: 100vh;
+  overflow-y: auto;
+  box-shadow: 3px 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  position: relative;
+}
+
+.logo {
+  font-size: 32px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  text-align: center;
+  color: #00d8ff;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 10px rgba(0, 216, 255, 0.5);
+  padding: 10px;
+  border-bottom: 2px solid rgba(0, 216, 255, 0.3);
+}
+
+.logo:hover {
+  color: #7fdbff;
+  text-shadow: 0 0 15px rgba(127, 219, 255, 0.8);
+  transform: translateY(-2px);
+}
+
+.menu {
+  list-style: none;
+}
+
+.menu-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  font-size: 17px;
+  padding: 12px 15px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-btn:hover {
+  background: rgba(0, 123, 255, 0.7);
+  transform: translateX(5px);
+}
+
+.menu-btn::after {
+  content: "▼";
+  font-size: 12px;
+  transition: transform 0.3s;
+}
+
+.menu-btn.active::after {
+  transform: rotate(180deg);
+}
+
+.submenu {
+  display: none;
+  list-style: none;
+  padding-left: 20px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(-10px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+.submenu li {
+  margin: 5px 0;
+}
+
+.submenu li a {
+  color: #bbdfff;
+  text-decoration: none;
+  display: block;
+  padding: 8px 12px;
+  font-size: 15px;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+}
+
+.submenu li a:hover {
+  color: #7fdbff;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(5px);
+}
+
+/* Contenido principal con imagen de fondo */
+.main-content {
+  position: relative;
+  flex-grow: 1;
+  min-height: 100vh;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.main-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('img/descarga.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.15;
+  z-index: 1;
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Información del curso */
+.course-info {
+  background: rgba(255, 255, 255, 0.92);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  width: 90%;
+  max-width: 800px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.course-info h2 {
+  font-size: 42px;
+  color: #001f3f;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #001f3f, #00d8ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.course-description {
+  font-size: 20px;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.highlight {
+  color: #00d8ff;
+  font-weight: bold;
+}
+
+/* Sección de características */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  width: 90%;
+  max-width: 1000px;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.92);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.feature-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+  color: #00d8ff;
+}
+
+.feature-card h3 {
+  color: #001f3f;
+  margin-bottom: 15px;
+  font-size: 22px;
+}
+
+.feature-card p {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Niveles educativos */
+.levels {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 90%;
+  max-width: 800px;
+  flex-wrap: wrap;
+}
+
+.level-tag {
+  background: linear-gradient(135deg, #001f3f, #00d8ff);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.level-tag:hover {
+  transform: scale(1.05);
+}
+
+/* Versión para pantallas pequeñas */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    height: auto;
+    overflow: auto;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 15px;
+  }
+
+  .main-content {
+    padding: 15px;
+    min-height: calc(100vh - 200px);
+  }
+
+  .menu-btn {
+    font-size: 18px;
+    padding: 15px;
+  }
+
+  .submenu li a {
+    font-size: 16px;
+    padding: 10px 15px;
+  }
+
+  .logo {
+    text-align: left;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .course-info {
+    padding: 25px;
+  }
+
+  .course-info h2 {
+    font-size: 32px;
+  }
+
+  .course-description {
+    font-size: 18px;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .levels {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #001f3f;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #003366;
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FIZZIX FUN - Aprende Ciencias de Forma Divertida</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- Barra lateral -->
+    <nav class="sidebar">
+      <h1 class="logo" onclick="irInicio()">FIZZIX FUN</h1>
+      
+      <ul class="menu">
+        <li>
+          <button class="menu-btn" onclick="toggleSubmenu('inicio')">Inicio</button>
+          <ul class="submenu" id="inicio">
+            <li><a href="#" onclick="mostrarSeccion('bienvenida')">Bienvenida</a></li>
+            <li><a href="#" onclick="mostrarSeccion('objetivos')">Objetivos</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="menu-btn" onclick="toggleSubmenu('estructura')">Estructura</button>
+          <ul class="submenu" id="estructura">
+            <li><a href="#" onclick="mostrarSeccion('niveles')">Niveles</a></li>
+            <li><a href="#" onclick="mostrarSeccion('plan-estudio')">Plan de estudio</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="menu-btn" onclick="toggleSubmenu('horarios')">Horarios</button>
+          <ul class="submenu" id="horarios">
+            <li><a href="#" onclick="mostrarSeccion('clases')">Clases semanales</a></li>
+            <li><a href="#" onclick="mostrarSeccion('talleres')">Talleres</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="menu-btn" onclick="toggleSubmenu('modalidades')">Modalidades</button>
+          <ul class="submenu" id="modalidades">
+            <li><a href="#" onclick="mostrarSeccion('online')">Online</a></li>
+            <li><a href="#" onclick="mostrarSeccion('presencial')">Presencial</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="menu-btn" onclick="toggleSubmenu('temas')">Temas</button>
+          <ul class="submenu" id="temas">
+            <li><a href="#" onclick="mostrarSeccion('matematicas')">Matemáticas</a></li>
+            <li><a href="#" onclick="mostrarSeccion('fisica')">Física</a></li>
+            <li><a href="#" onclick="mostrarSeccion('quimica')">Química</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="menu-btn" onclick="toggleSubmenu('info')">Información</button>
+          <ul class="submenu" id="info">
+            <li><a href="#" onclick="mostrarSeccion('contacto')">Contacto</a></li>
+            <li><a href="#" onclick="mostrarSeccion('faq')">Preguntas frecuentes</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="menu-btn" onclick="toggleSubmenu('biblioteca')">Biblioteca</button>
+          <ul class="submenu" id="biblioteca">
+            <li><a href="#" onclick="mostrarSeccion('apuntes')">Apuntes</a></li>
+            <li><a href="#" onclick="mostrarSeccion('videos')">Videos</a></li>
+            <li><a href="#" onclick="mostrarSeccion('ejercicios')">Ejercicios</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="main-content">
+      <div class="content-wrapper">
+        <!-- Información del curso -->
+        <section class="course-info">
+          <h2>FIZZIX FUN</h2>
+          <p class="course-description">
+            Un espacio de aprendizaje para desarrollar habilidades de conocimientos a nivel 
+            <span class="highlight">básico, media superior y superior</span> 
+            para fomentar estos conocimientos en la vida cotidiana y sobre su importancia.
+          </p>
+          <div class="levels">
+            <span class="level-tag">Básico</span>
+            <span class="level-tag">Media Superior</span>
+            <span class="level-tag">Superior</span>
+          </div>
+        </section>
+
+        <!-- Características principales -->
+        <div class="features">
+          <div class="feature-card">
+            <div class="feature-icon">🧮</div>
+            <h3>Matemáticas</h3>
+            <p>Desde álgebra básica hasta cálculo avanzado, con ejercicios prácticos y aplicaciones en la vida real.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">⚛️</div>
+            <h3>Física</h3>
+            <p>Descubre los principios que rigen nuestro universo con experimentos y simulaciones interactivas.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🧪</div>
+            <h3>Química</h3>
+            <p>Comprende la composición de la materia y las reacciones químicas que ocurren a nuestro alrededor.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
